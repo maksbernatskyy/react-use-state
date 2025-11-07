@@ -3,6 +3,9 @@ import { useState } from "react"
 {/* Import the array */}
 import languages from "../assets/languages";
 
+{/* Import the markup of card */}
+import Card from "./Card";
+
 
 
 
@@ -12,36 +15,38 @@ export default function Main() {
     <languages />
     
     {/* Destructing the array of useState */}
-    const [selection, setSelection] = useState (0)
+    const [selection, setSelection] = useState(0)
+
+    
+
+    let language = languages[selection]
 
     return (
         <>
 
         <div className="container mt-5">
+
+            {/* Buttons */}
             <div className="d-flex gap-3">
 
                 {/* Add buttons */}
                 {
                     languages.map((thisLanguage) => (
-                        <button key={thisLanguage.id} className="btn btn-primary">
+                        <button key={thisLanguage.id} className="btn btn-primary" onClick={handleClick}>
                             {thisLanguage.title}
-                        </button>
+                        </button> 
                     ))
                 }
             </div>
 
             {/* Card */}
-            <div className="card mt-5">
-                <div className="card-body">
-                    <h5 className="card-title">
-                        HTML
-                    </h5>
-                    <p className="card-text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, beatae!
-                    </p>
+            <Card 
+                title={language.title}
+                description={language.description}
+            />
+            
+            
 
-                </div>
-            </div>
         </div>
         
   
