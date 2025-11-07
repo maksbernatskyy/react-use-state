@@ -31,4 +31,7 @@ const languages = [
   }
 ];
 
+{/* Export the array */}
+export default languages
+
 
