@@ -19,6 +19,8 @@ export default function Main() {
 
         <div className="container mt-5">
             <div className="d-flex gap-3">
+
+                {/* Add buttons */}
                 {
                     languages.map((thisLanguage) => (
                         <button key={thisLanguage.id} className="btn btn-primary">
@@ -26,6 +28,19 @@ export default function Main() {
                         </button>
                     ))
                 }
+            </div>
+
+            {/* Card */}
+            <div className="card mt-5">
+                <div className="card-body">
+                    <h5 className="card-title">
+                        HTML
+                    </h5>
+                    <p className="card-text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, beatae!
+                    </p>
+
+                </div>
             </div>
         </div>
         
