@@ -15,7 +15,7 @@ export default function Main() {
     <languages />
     
     {/* Destructing the array of useState */}
-    const [selection, setSelection] = useState(0)
+    let [selection, setSelection] = useState(0)
 
     
 
@@ -31,8 +31,8 @@ export default function Main() {
 
                 {/* Add buttons */}
                 {
-                    languages.map((thisLanguage) => (
-                        <button key={thisLanguage.id} className="btn btn-primary" onClick={handleClick}>
+                    languages.map((thisLanguage, i) => (
+                        <button key={thisLanguage.id} className="btn btn-primary" onClick={() => {setSelection(selection = thisLanguage.id - 1)}}>
                             {thisLanguage.title}
                         </button> 
                     ))
