@@ -17,8 +17,7 @@ export default function Main() {
     {/* Destructing the array of useState */}
     let [selection, setSelection] = useState(-1)
 
-    
-
+    {/* add variable language like the object selected */}
     let language = languages[selection]
 
     return (
@@ -39,7 +38,7 @@ export default function Main() {
                 }
             </div>
 
-            {/* Card */}
+            {/* Card with condition */}
             <Card 
                 title={selection === -1 ? 'Nessun dettaglio selezionato' : language.title}
                 description={selection === -1 ? '' : language.description}
