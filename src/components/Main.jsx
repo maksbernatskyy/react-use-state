@@ -15,7 +15,7 @@ export default function Main() {
     <languages />
     
     {/* Destructing the array of useState */}
-    let [selection, setSelection] = useState(0)
+    let [selection, setSelection] = useState(-1)
 
     
 
@@ -41,8 +41,8 @@ export default function Main() {
 
             {/* Card */}
             <Card 
-                title={language.title}
-                description={language.description}
+                title={selection === -1 ? 'Nessun dettaglio selezionato' : language.title}
+                description={selection === -1 ? '' : language.description}
             />
             
             
