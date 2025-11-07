@@ -31,7 +31,7 @@ export default function Main() {
                 {/* Add buttons */}
                 {
                     languages.map((thisLanguage, i) => (
-                        <button key={thisLanguage.id} className="btn btn-primary" onClick={() => {setSelection(selection = thisLanguage.id - 1)}}>
+                        <button key={thisLanguage.id} className={`btn ${selection === thisLanguage.id - 1 ? "btn-warning" : "btn-primary"}`} onClick={() => {setSelection(selection = thisLanguage.id - 1)}}>
                             {thisLanguage.title}
                         </button> 
                     ))
